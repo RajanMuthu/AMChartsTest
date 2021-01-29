@@ -9,7 +9,6 @@ import Home from './container/home';
 import { UserContext } from './userDetailsContext';
 
 const store = configureStore();
-const userDetails = {loginTime: new Date().toTimeString(), userName: 'Rajan'};
 
 export default class App extends React.Component {
 
@@ -23,12 +22,12 @@ export default class App extends React.Component {
                   </Provider>
                 </Route>
                 <Route path="/about">
-                  <UserContext.Provider value={userDetails}>
+                  <UserContext.Provider value={this.props.userDetails}>
                     <About/>
                   </UserContext.Provider>
                 </Route>
                 <Route path="/contact" component={Contact}>
-                  <UserContext.Provider value={userDetails}>
+                  <UserContext.Provider value={this.props.userDetails}>
                     <Contact/>
                   </UserContext.Provider>
                 </Route>

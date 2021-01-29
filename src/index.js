@@ -4,11 +4,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+const userDetails = {loginTime: new Date().toTimeString(), userName: 'Rajan'};
 
 const renderApp = () =>
   render(
       <BrowserRouter>
-        <App />
+        <App userDetails={userDetails}/>
       </BrowserRouter>,
     document.getElementById('root')
   );
